@@ -1,0 +1,22 @@
+{
+  "extends": ["tslint:recommended", "tslint-react", "tslint-config-prettier"],
+  "plugins": ["react-hooks"],
+  "rules": {
+    "ordered-imports": [false],
+    "no-console": false,
+    "object-literal-sort-keys": false,
+    "react-hooks/rules-of-hooks": "error", // Checks rules of Hooks
+    "react-hooks/exhaustive-deps": "warn", // Checks effect dependencies
+    "indent": [true, "spaces", 4],
+    "jsx-no-lambda": false,
+    "callable-types": false,
+    "no-shadowed-variable": false
+  },
+  "linterOptions": {
+    "exclude": [
+      "config/**/*.js",
+      "node_modules/**/*.ts",
+      "coverage/lcov-report/*.js"
+    ]
+  }
+}
