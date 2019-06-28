@@ -20,6 +20,7 @@
     "camelcase": "^5.2.0",
     "case-sensitive-paths-webpack-plugin": "2.2.0",
     "css-loader": "2.1.1",
+    "decimal.js": "^10.2.0",
     "dotenv": "6.2.0",
     "dotenv-expand": "4.2.0",
     "eslint": "^5.16.0",
@@ -130,13 +131,9 @@
       "jest-watch-typeahead/testname"
     ]
   },
-  "babel": {
-    "presets": [
-      "react-app"
-    ]
-  },
   "devDependencies": {
     "@types/react-router-dom": "^4.3.3",
+    "babel-plugin-auto-decimal-js": "^0.0.3",
     "less": "^3.9.0",
     "less-loader": "^5.0.0"
   }

@@ -11,7 +11,7 @@ interface IRoute {
 
 export const routesConfig: IRoute[] = [
   {
-    name: "Home",
+    name: "home",
     path: "/",
     exact: true,
     component: React.lazy(() => import(/* webpackChunkName: "home" */ './pages/home'))
@@ -39,6 +39,12 @@ export const routesConfig: IRoute[] = [
     exact: true,
     path: '/use-modal',
     component: React.lazy(() => import(/* webpackChunkName: "use-modal" */ './pages/useModal'))
+  },
+  {
+    name: 'use-fetch',
+    exact: true,
+    path: '/use-fetch',
+    component: React.lazy(() => import(/* webpackChunkName: "use-fetch" */ './pages/useFetch'))
   }
 ];
 
@@ -47,12 +53,17 @@ export default () => {
     <BrowserRouter>
       <React.Suspense fallback={<Loading />}>
         <Switch>
-          {routesConfig.map(({ path, component, exact = true }: IRoute) => (
+          {routesConfig.map(({ name, path, component: Component, exact = true }: IRoute) => (
             <Route
               key={path}
               path={path}
               exact={exact}
-              component={component}
+              render={
+                () => {
+                  document.title = name;
+                  return <Component />
+                }
+              }
             />
           ))}
         </Switch>

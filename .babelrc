@@ -1,0 +1,8 @@
+{
+  "plugins": [
+    "auto-decimal-js"
+  ],
+  "presets": [
+    "react-app"
+  ]
+}
